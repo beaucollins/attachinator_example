@@ -1,0 +1,11 @@
+<h2>Edit Album</h2>
+
+<%- form_for @album do |f| -%>
+	<%= f.text_field :name -%>
+	<%- f.attachment_fields_for :photos do |photo_fields| -%>
+		<%= photo_fields.label :file, "File" %>
+		<%= photo_fields.file_field :file %>
+		<%= photo_fields.check_box :_delete %>
+	<%- end -%>
+	<%= f.submit %>
+<%- end -%>

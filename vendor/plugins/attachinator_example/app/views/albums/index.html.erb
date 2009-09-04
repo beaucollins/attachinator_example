@@ -1,0 +1,7 @@
+<h1>Albums</h1>
+
+<ul>
+	<%- @albums.each do |album| -%>
+	<%= link_to(h(album.name), edit_album_path(album)) %>
+	<%- end -%>
+</ul>
